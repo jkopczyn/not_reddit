@@ -1,0 +1,9 @@
+<h1>Make a new Post!</h1>
+<br>
+<h2> In Sub: <%= @sub.title %> </h2>
+<form action="<%= sub_posts_url(@sub) %>" method="post">
+
+  <%= render "form" %>
+
+  <input type="submit" value="Post it!">
+</form>

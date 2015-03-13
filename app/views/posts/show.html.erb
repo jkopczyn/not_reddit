@@ -1,0 +1,10 @@
+
+<h1>Sub: <%= @post.sub.title %></h1>
+<br>
+<h2><%=title_text(@post) %></h2>
+<br>
+<p><%= @post.content%></p>
+<br>
+<% if current_user == @post.author %>
+  <%= button_to "Edit this post", edit_sub_post_url(@post.sub, @post), method: :get %>
+<% end %>
