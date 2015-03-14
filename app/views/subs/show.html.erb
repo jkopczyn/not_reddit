@@ -3,11 +3,11 @@
 <br>
 <ul>
   <% @sub.posts.each do |post| %>
-    <li><%= link_to post.title, sub_post_url(@sub, post) %></li>
+    <li><%= link_to post.title, post_url(post) %></li>
   <% end %>
 </ul>
 <br>
-<%= button_to "Make a new post!", new_sub_post_url(@sub), method: :get %>
+<%= button_to "Make a new post!", new_post_url, method: :get %>
 <br>
 <% if current_user == @sub.moderator %>
   <%= button_to "Edit this sub", edit_sub_url(@sub), method: :get %>

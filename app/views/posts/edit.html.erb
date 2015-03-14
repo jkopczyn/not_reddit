@@ -1,6 +1,6 @@
 <h1>Edit this post!</h1>
 <br>
-<form action="<%= sub_post_url(@post.sub, @post) %>" method="post">
+<form action="<%= post_url(@post) %>" method="post">
   <input type="hidden" name="_method" value="patch">
 
   <%= render "form" %>

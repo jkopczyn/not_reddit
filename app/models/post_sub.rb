@@ -10,8 +10,8 @@
 #
 
 class PostSub < ActiveRecord::Base
-  validates :post_id, :sub_id, presence: true
+  validates :post, :sub, presence: true
 
-  belongs_to :post, dependent: :destroy
+  belongs_to :post, dependent: :destroy, inverse_of: :post_subs
   belongs_to :sub, dependent: :destroy
 end

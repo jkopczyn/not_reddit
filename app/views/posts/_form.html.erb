@@ -16,3 +16,13 @@
   <textarea name="post[content]"><%= @post.content %></textarea>
 </label>
 <br>
+
+<label>Subs<br>
+  <% Sub.all.each do |sub| %>
+    <label><%= sub.title %>
+      <input type="checkbox" name="post[sub_ids][]" value="<%= sub.id %>"
+          <%= "checked" if @post.subs.include?(sub) %> >
+    </label>
+    <br>
+  <% end %>
+</label>
