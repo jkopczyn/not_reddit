@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resource :session,  only: [:new, :create, :destroy]
   resources :users
   resources :subs
-  resources :posts, except: [:index, :destroy]
+  resources :posts, except: [:index, :destroy] do
+    resources :comments, only: :new
+  end
+  
+  resources :comments, only: [:create]
 
 
   # You can have the root of your site routed with "root"
